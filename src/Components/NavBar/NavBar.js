@@ -40,13 +40,15 @@ const NavBar = (name) => {
 
     return (
         <nav className='d-flex bg-primary'>
-             <div style={{width: 40, height: 24}} className='fw-bold text-white d-md-none ' onClick={() => handleClick(!open)} >
-                {open ? <XMarkIcon className='h-100 w-100 mb-1'/> : <Bars3Icon className='h-100 w-100 mb-1'/> }
+             <div style={{width: 40, height: 24}} 
+                    className='fw-bold text-white d-md-none ' 
+                    onClick={() => handleClick(!open)} >
+                    {open ? <XMarkIcon className='h-100 w-100 mb-1'/> : <Bars3Icon className='h-100 w-100 mb-1'/>}
             </div>
             <ul className={`
-                    nav-items
-                     mb-0 py-1  w-100 d-md-flex justify-content-center align-items-center list-unstyled
-                    ${open ? 'show' : 'hide'}`}>
+                    nav-items mb-0 py-1  w-100 d-md-flex justify-content-center align-items-center list-unstyled
+                    ${open ? 'show' : 'hide'}`}
+            >
                 {
                     navItems.map(item => <NavItem key={item.id} item={item}></NavItem>)     
                 }

@@ -42,15 +42,15 @@ const Pricing = () => {
 
     ]
 
-    return (
-        <div>
-            <h1 className='text-center fs-1 bg-warning p-1'>Best deal of the town!</h1>
-            <div className='d-flex justify-content-around align-items-center '>
+    return ( 
+        <div className='container'>
+            <div className='row gap-4 row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-lg-3 row-cols-xlg-3  '>
             {
                 pricingOptions.map(priceOption => <PriceCard key={priceOption.id} priceOption={priceOption} ></PriceCard>)
             }
             </div>
-        </div>
+
+     </div>
     );
 };
 
