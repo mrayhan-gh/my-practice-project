@@ -3,6 +3,7 @@ import './App.css';
 import NavBar from './Components/NavBar/NavBar';
 import Pricing from './Components/Pricing/Pricing';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid } from 'recharts';
+import PhoneBar from './Components/PhoneBar/PhoneBar';
 
 function App() {
  const data = [
@@ -27,8 +28,8 @@ function App() {
         <XAxis dataKey='name'></XAxis>
         <YAxis ></YAxis>
         <Tooltip></Tooltip>
-
       </LineChart>
+      <PhoneBar></PhoneBar>
 
   </div>
   );
