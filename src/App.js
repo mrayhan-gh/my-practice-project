@@ -4,11 +4,13 @@ import Home from './Components/Home/Home';
 import {createBrowserRouter, RouterProvider, Route, Link,} from "react-router-dom";
 import Service from './Components/Service/Service'
 import About from './Components/About/About';
-
+import Contact from './Components/Contact/Contact'
+import Visit from './Components/Visit/Visit';
+import DarkMode from './Components/DarkMode/DarkMode';
+import Links from './Components/Links/Links';
 
 function App() {
-
-  // Route setting for different routes:
+// Route setting for different routes:
       const router = createBrowserRouter([ 
                   {
                     path: "/",
@@ -17,6 +19,22 @@ function App() {
                   {
                     path: "/Service",
                     element: <Service></Service>,
+                  },
+                  {
+                    path: '/Contact',
+                    element: <Contact></Contact>
+                  },
+                  {
+                    path: '/Visit',
+                    element: <Visit></Visit>
+                  },
+                  {
+                    path: '/DarkMode',
+                    element: <DarkMode></DarkMode>
+                  },
+                  {
+                    path: '/Links',
+                    element: <Links></Links>
                   },
                   {
                     path: "/About",
