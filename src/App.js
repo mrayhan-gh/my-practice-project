@@ -9,6 +9,7 @@ import DarkMode from './Components/DarkMode/DarkMode';
 import Links from './Components/Links/Links';
 import Friends from './Components/Friends/Friends';
 import MyElement from './Components/MyElement/MyElement'
+import FriendDetail from './FriendDetail/FriendDetail';
 
 function App() {
 // Route setting for different routes:
@@ -22,13 +23,7 @@ function App() {
                         element: <Friends></Friends>,
                         loader: async () => {
                           return fetch('https://jsonplaceholder.typicode.com/users/1/users')
-                        },
-                        children: [
-                          {
-                            path:'Friend:friendId',
-                            element: <MyElement></MyElement>
-                          },
-                        ]
+                        }
                       },
                       {
                         path: "/Service",
@@ -52,8 +47,16 @@ function App() {
                       },   {
                         path: "/About",
                         element: <About></About>,
-                      }
-
+                      },
+                      {
+                        path: '/friend/:friendId',
+                        loader: async ({params}) => {
+                              console.log(params);
+                              return fetch(`https://jsonplaceholder.typicode.com/users/${params.friendId}`)
+                        },
+                        element: <FriendDetail></FriendDetail>
+                      },
+                      
                     ]
                   },
                   {
