@@ -1,10 +1,12 @@
 import React from 'react';
 import './Friend.css'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 const Friend = ({friend}) => {
     const {id, name, username, email} = friend;
+    const navigate = useNavigate();
 
     const handleClick = () => {
+        navigate(`/friend/${friend.id}`)
        console.log("Hello world!");
     }
     return (
@@ -18,7 +20,7 @@ const Friend = ({friend}) => {
             <Link to={`/friend/${friend.id}`}>Click</Link>
             </button>
             <button onClick={handleClick}>Another</button>
-
+            
         </div>
     );
 };

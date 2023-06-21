@@ -10,6 +10,8 @@ import Links from './Components/Links/Links';
 import Friends from './Components/Friends/Friends';
 import MyElement from './Components/MyElement/MyElement'
 import FriendDetail from './FriendDetail/FriendDetail';
+import Posts from './Components/Posts/Posts';
+import PostDetail from './Components/PostDetail/PostDetail';
 
 function App() {
 // Route setting for different routes:
@@ -56,6 +58,20 @@ function App() {
                         },
                         element: <FriendDetail></FriendDetail>
                       },
+                      {
+                        path: '/Posts',
+                        loader: async () => {
+                          return fetch('https://jsonplaceholder.typicode.com/posts')
+                        } ,
+                        element: <Posts></Posts>
+                      },
+                      {
+                        path: '/PostDetail/:postId',
+                        loader: async (params) => {
+                          return fetch(`https://jsonplaceholder.typicode.com/posts/${params.postId}`)
+                        } ,
+                        element: <PostDetail></PostDetail>
+                      }
                       
                     ]
                   },
